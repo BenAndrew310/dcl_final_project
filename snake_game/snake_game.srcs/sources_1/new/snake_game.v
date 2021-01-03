@@ -36,20 +36,30 @@ module snake_game(
 
     // Declare system variables
 
-    localparam TILE_WIDTH = 60, TILE_HEIGHT = 60;
+    localparam TILE_LENGTH = 40;
+    localparam COLUMN = 16;
+    localparam ROW = 12;
 
-    wire [15:0] start_point = 0;
-    reg [4:0] map [7:0];
-    integer i,j;
+    reg [4:0] map [COLUMN*ROW-1:0];
+    integer i;
     initial begin
-        for (i=0; i<16*12; i=i+1) begin
-            map[i] = 21;
-            // for (j=0; j<12; j=j+1) begin
-            //     map[i][j] = 21;
-            // end
+        for (i=0; i<COLUMN*ROW; i=i+1) begin
+            if (i<16)
+              map[i] <= 4;
+            else if (i%16==0)
+              map[i] <= 2;
+            else if ((i-15)%16==0)
+              map[i] <= 3;
+            else if (i >= COLUMN*ROW-16)
+              map[i] <= 1;
+            else
+              map[i] <= 21;
+            map[0] <= 22;
+            map[COLUMN-1] <= 23;
+            map[COLUMN*(ROW-1)] <= 19;
+            map[COLUMN*ROW-1] <= 20;
+            map[COLUMN*(4)+5] <= 0;
         end
-        // map[0][0] = 1;
-        // map[12][10] = 1;
     end
 
     // Declare SRAM control signals
@@ -91,7 +101,7 @@ module snake_game(
       .clk_out(vga_clk)
     );
 
-    sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(TILE_WIDTH*TILE_HEIGHT)) //ADDR_WIDTH(18)
+    sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(TILE_LENGTH*TILE_LENGTH*24)) //ADDR_WIDTH(18)
         ram1 (.clk(clk), .we(sram_we), .en(sram_en),
             .addr(sram_addr), .data_i(data_in), .data_o(data_out));
 
@@ -103,33 +113,25 @@ module snake_game(
 
     assign {VGA_RED,VGA_GREEN,VGA_BLUE} = rgb_reg;
 
-    // initial begin
-    //     pixel_addr <= 18'd0;
-    // end
-
-    integer x, y;
-
-    // always @(posedge clk)  begin
-    //     if (~reset_n)
-    //         start_point <= 0;
-    //     else begin
-    //         start_point <= 11*1600;
-    //         // x = pixel_x/40;
-    //         // y = pixel_y/40;
-    //         // start_point = map[x*16+y]*1600;
-    //     end
-    // end
-
-    assign start_point = 11*1600;
+    integer pos_x;
+    integer pos_y;
+    reg [15:0] start_point = 0;
+    always @(posedge clk)  begin
+        if (~reset_n)
+            start_point <= 0;
+        else begin
+            pos_x <= pixel_x/TILE_LENGTH;
+            pos_y <= pixel_y/TILE_LENGTH;
+            start_point <= map[pos_y*COLUMN+pos_x]*1600;
+        end
+    end
 
     always @ (posedge clk) begin
       if (~reset_n)
         pixel_addr <= 0;
       else
-        // Scale up a 320x240 image for the 640x480 display.
         // (pixel_x, pixel_y) ranges from (0,0) to (639, 479)
-        // pixel_addr <= (pixel_y >> 1) * VBUF_W + (pixel_x >> 1) + start_point;
-        pixel_addr <= pixel_y%40*40 + pixel_x%40 + start_point;
+        pixel_addr <= (pixel_y%TILE_LENGTH)*TILE_LENGTH + pixel_x%TILE_LENGTH + start_point;
     end
 
     always @(posedge clk) begin

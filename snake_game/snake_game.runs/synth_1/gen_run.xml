@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1609671672">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1609681533">
   <File Type="PA-TCL" Name="snake_game.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="snake_game_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="snake_game_reports.tcl"/>
@@ -55,6 +55,12 @@
     </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
