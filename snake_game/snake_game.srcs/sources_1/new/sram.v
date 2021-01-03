@@ -22,7 +22,7 @@ integer idx;
 // ------------------------------------
 // Initialize the sram cells with the values defined in "image.dat."
 initial begin
-    $readmemh("fish1.mem", RAM);
+    $readmemh("assets-mem/all_in_one.mem", RAM);
 end
 
 // ------------------------------------

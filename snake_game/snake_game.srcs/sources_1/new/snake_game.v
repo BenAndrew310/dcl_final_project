@@ -36,7 +36,21 @@ module snake_game(
 
     // Declare system variables
 
+    localparam TILE_WIDTH = 60, TILE_HEIGHT = 60;
 
+    wire [15:0] start_point = 0;
+    reg [4:0] map [7:0];
+    integer i,j;
+    initial begin
+        for (i=0; i<16*12; i=i+1) begin
+            map[i] = 21;
+            // for (j=0; j<12; j=j+1) begin
+            //     map[i][j] = 21;
+            // end
+        end
+        // map[0][0] = 1;
+        // map[12][10] = 1;
+    end
 
     // Declare SRAM control signals
 
@@ -61,8 +75,8 @@ module snake_game(
     reg [17:0] pixel_addr;
 
     // Video buffer size
-    localparam VBUF_W = 320; // might need to change those afterwards
-    localparam VBUF_H = 240;
+    localparam VBUF_W = 640;
+    localparam VBUF_H = 480;
 
     // Instiantiate the VGA sync signal generator
     vga_sync vs0(
@@ -77,6 +91,11 @@ module snake_game(
       .clk_out(vga_clk)
     );
 
+    sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(TILE_WIDTH*TILE_HEIGHT)) //ADDR_WIDTH(18)
+        ram1 (.clk(clk), .we(sram_we), .en(sram_en),
+            .addr(sram_addr), .data_i(data_in), .data_o(data_out));
+
+
     assign sram_en = 1;
     assign data_in = 12'h000;
 
@@ -84,6 +103,42 @@ module snake_game(
 
     assign {VGA_RED,VGA_GREEN,VGA_BLUE} = rgb_reg;
 
-    
+    // initial begin
+    //     pixel_addr <= 18'd0;
+    // end
 
+    integer x, y;
+
+    // always @(posedge clk)  begin
+    //     if (~reset_n)
+    //         start_point <= 0;
+    //     else begin
+    //         start_point <= 11*1600;
+    //         // x = pixel_x/40;
+    //         // y = pixel_y/40;
+    //         // start_point = map[x*16+y]*1600;
+    //     end
+    // end
+
+    assign start_point = 11*1600;
+
+    always @ (posedge clk) begin
+      if (~reset_n)
+        pixel_addr <= 0;
+      else
+        // Scale up a 320x240 image for the 640x480 display.
+        // (pixel_x, pixel_y) ranges from (0,0) to (639, 479)
+        // pixel_addr <= (pixel_y >> 1) * VBUF_W + (pixel_x >> 1) + start_point;
+        pixel_addr <= pixel_y%40*40 + pixel_x%40 + start_point;
+    end
+
+    always @(posedge clk) begin
+      if (pixel_tick) rgb_reg <= rgb_next;
+    end
+
+    always @(*) begin
+        if (~video_on)
+            rgb_next = 12'h000;
+        else rgb_next = data_out;
+    end
 endmodule
