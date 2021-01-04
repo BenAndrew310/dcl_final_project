@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sun Jan  3 21:46:41 2021
+| Date         : Mon Jan  4 21:41:03 2021
 | Host         : DESKTOP-PSHTFUI running 64-bit major release  (build 9200)
 | Command      : report_drc -file snake_game_drc_opted.rpt -pb snake_game_drc_opted.pb -rpx snake_game_drc_opted.rpx
 | Design       : snake_game
@@ -36,12 +36,12 @@ Table of Contents
 -----------------
 DPIP-1#1 Warning
 Input pipelining  
-DSP start_point_reg input start_point_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP View/start_point_reg input View/start_point_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-2#1 Warning
 MREG Output pipelining  
-DSP start_point_reg multiplier stage start_point_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP View/start_point_reg multiplier stage View/start_point_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 
