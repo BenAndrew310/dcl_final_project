@@ -23,7 +23,7 @@ module clk_divider#(parameter divider = 16)(input clk, input reset, output reg c
 localparam half_divider = divider/2;
 localparam divider_minus_one = divider-1;
 
-reg [19:0] counter;
+reg [7:0] counter;
 
 always @(posedge clk)
 begin

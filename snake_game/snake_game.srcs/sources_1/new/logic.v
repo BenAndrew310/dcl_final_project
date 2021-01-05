@@ -68,13 +68,13 @@ output [COLUMN*ROW*5-1:0] flattened_map
 
         //border and corner
         for (i=0; i<COLUMN*ROW; i=i+1) begin
-            if (i<16)
+            if (i<COLUMN)
                 map[i] <= BORDER_T;
-            else if (i%16==0)
+            else if (i%COLUMN==0)
                 map[i] <= BORDER_L;
-            else if ((i-15)%16==0)
+            else if ((i-COLUMN+1)%COLUMN==0)
                 map[i] <= BORDER_R;
-            else if (i >= COLUMN*ROW-16)
+            else if (i >= COLUMN*ROW-COLUMN)
                 map[i] <= BORDER_B;
         end
         map[0] <= TILE_TL;
@@ -86,7 +86,6 @@ output [COLUMN*ROW*5-1:0] flattened_map
         for (i=0; i < CALC_COL; i = i + 1) begin
             for (j = 0; j < CALC_ROW; j = j+1) begin
                 map[(i+1)+(j+1)*COLUMN] = calc_map[i+j*CALC_COL];
-
             end
         end
     end
@@ -106,42 +105,56 @@ output [COLUMN*ROW*5-1:0] flattened_map
         
         //apple
         calc_map[CALC_COL*3+1] = APPLE;
-        calc_map[CALC_COL*CALC_ROW-1] = APPLE;
         //todo
     end
 
-    always @(posedge timer) begin
+    reg collided;
+    always @(posedge clk) begin
+        collided <= 0;
         if (timer) begin
-            snake_temp <= snake_pos[1];
             if (direction[0]) begin //UP
-                snake_temp[0] = snake_pos[0] - CALC_COL;
+                collided <= snake_pos[0] < CALC_COL;
+                if (~collided) 
+                    snake_temp[0] = snake_pos[0] - CALC_COL;
+
             end else 
             if (direction[1]) begin //RIGHT
-                snake_temp[0] = snake_pos[0] + 1;
+                collided <= (snake_pos[0] + 1)%CALC_COL == 0;
+                if (~collided) 
+                    snake_temp[0] = snake_pos[0] + 1;
+
             end else
             if (direction[2]) begin //DOWN
-                snake_temp[0] = snake_pos[0] + CALC_COL;
+                collided <= (snake_pos[0] ) >= CALC_COL*(CALC_ROW-1);
+                if (~collided) 
+                    snake_temp[0] = snake_pos[0] + CALC_COL;
+
             end else begin //LEFT
-                snake_temp[0] = snake_pos[0] - 1;
+                collided <= (snake_pos[0]%CALC_COL) == 0;
+                if (~collided) 
+                    snake_temp[0] = snake_pos[0] - 1;
             end
 
-            for (i = 0; i < CALC_COL*CALC_ROW; i = i + 1) begin
-                if(i >= snake_len)
-                    snake_pos[i] = NULL;
-                else begin
-                    snake_temp[i+1] = snake_pos[i];
+            if (~collided) begin
+                for (i = 0; i < CALC_COL*CALC_ROW; i = i + 1) begin
+                    if(i >= snake_len)
+                        snake_pos[i] = NULL;
+                    else begin
+                        snake_temp[i+1] = snake_pos[i];
+                    end
                 end
-            end
+            end 
         end
-    end
-
-    always @(posedge clk) begin
         for (i = 0; i < CALC_COL*CALC_ROW; i = i + 1) begin
             snake_pos[i] = snake_temp[i];
         end
     end
 
     wire timer;
-    clk_divider#(.divider(1000000)) Clk_Divider(.clk(clk), .reset(reset_n), .clk_out(timer));
+    reg [23:0] counter;
+    always @(posedge clk) begin
+        counter = (counter <= 10000000)? counter + 1: 0;
+    end
+    assign timer = counter == 10000000;
 
 endmodule

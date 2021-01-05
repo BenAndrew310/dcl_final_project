@@ -48,5 +48,6 @@ module snake_game(
     view  View  ( .clk(clk),  .reset_n(reset_n), .flattened_map(flattened_map),
                   .VGA_HSYNC(VGA_HSYNC), .VGA_VSYNC(VGA_VSYNC), .VGA_RED(VGA_RED), .VGA_GREEN(VGA_GREEN), .VGA_BLUE(VGA_BLUE));
 
-    
+    assign usr_led = direction;
+
 endmodule
