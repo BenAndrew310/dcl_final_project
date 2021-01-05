@@ -41,7 +41,7 @@ module snake_game(
     wire [3:0]direction;
 
     wire [COLUMN*ROW*5-1:0] flattened_map;
-    _input Input ( .clk(clk),  .reset_n(reset_n), .usr_btn(usr_btn),
+    _input Input( .clk(clk),  .reset_n(reset_n), .usr_btn(usr_btn),
                   .direction(direction));
     logic Logic ( .clk(clk),  .reset_n(reset_n), .direction(direction),
                   .flattened_map(flattened_map));

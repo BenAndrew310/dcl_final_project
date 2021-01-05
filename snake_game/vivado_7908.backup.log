@@ -1,0 +1,137 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Jan  5 14:59:57 2021
+# Process ID: 7908
+# Current directory: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1964 C:\Users\Shlab29\Desktop\dcl_final_project\snake_game\snake_game.xpr
+# Log file: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/vivado.log
+# Journal file: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game\vivado.jou
+#-----------------------------------------------------------
+start_gui
+oopen_project C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.xprINFO: [Project 1-313] Project file moved from 'C:/Users/Shlab_14/Desktop/dcl_final_project/snake_game' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.ip_user_files', nor could it be found using path 'C:/Users/Shlab_14/Desktop/dcl_final_project/snake_game/snake_game.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+oopen_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 998.988 ; gain = 0.000
+update_compile_order -fileset sources_1
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jan  5 15:23:48 2021...
+host:3121/xilinx_tcf/Digilent/210319A438CBA
+set_property PROGRAM.FILE {C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Jan  5 15:11:01 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
+[Tue Jan  5 15:11:01 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Jan  5 15:23:49 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
+[Tue Jan  5 15:23:49 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Jan  5 15:32:31 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
+[Tue Jan  5 15:32:31 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Jan  5 15:42:23 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
+[Tue Jan  5 15:42:23 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Jan  5 15:54:01 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
+[Tue Jan  5 15:54:01 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Jan  5 16:03:18 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
+[Tue Jan  5 16:03:18 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Jan  5 16:18:37 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
+[Tue Jan  5 16:18:37 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
+reset_run synth_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jan  5 16:21:32 2021...

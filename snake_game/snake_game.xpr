@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="49" Path="C:/Users/Shlab_14/Desktop/dcl_final_project/snake_game/snake_game.xpr">
+<Project Version="7" Minor="49" Path="C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="b68541d07cea45d3a60a93fb7e391074"/>
