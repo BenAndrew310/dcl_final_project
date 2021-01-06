@@ -5,6 +5,7 @@ module view
 input  clk,
 input  reset_n,
 input  [COLUMN*ROW*5-1:0] flattened_map,
+input  game_started,
 
 // VGA specific I/O ports
 output VGA_HSYNC,
@@ -90,7 +91,7 @@ always @ (posedge clk) begin
     pixel_addr <= 0;
     else
     // (pixel_x, pixel_y) ranges from (0,0) to (639, 479)
-    pixel_addr <= (pixel_y%TILE_LENGTH)*TILE_LENGTH + pixel_x%TILE_LENGTH + start_point;
+    pixel_addr <= (pixel_y%TILE_LENGTH)*TILE_LENGTH + pixel_x%TILE_LENGTH - 1 + start_point;
 end
 
 always @(posedge clk) begin

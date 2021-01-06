@@ -39,13 +39,15 @@ module snake_game(
     localparam ROW = 12;
 
     wire [3:0]direction;
+    wire game_started;
+    wire game_ended;
 
     wire [COLUMN*ROW*5-1:0] flattened_map;
-    _input Input( .clk(clk),  .reset_n(reset_n), .usr_btn(usr_btn),
+    _input Input( .clk(clk),  .reset_n(reset_n), .usr_btn(usr_btn), .game_started(game_started),
                   .direction(direction));
-    logic Logic ( .clk(clk),  .reset_n(reset_n), .direction(direction),
-                  .flattened_map(flattened_map));
-    view  View  ( .clk(clk),  .reset_n(reset_n), .flattened_map(flattened_map),
+    logic Logic ( .clk(clk),  .reset_n(reset_n), .direction(direction), .game_started(game_started),
+                  .flattened_map(flattened_map), .game_ended(game_ended));
+    view  View  ( .clk(clk),  .reset_n(reset_n), .flattened_map(flattened_map), .game_started(game_started),
                   .VGA_HSYNC(VGA_HSYNC), .VGA_VSYNC(VGA_VSYNC), .VGA_RED(VGA_RED), .VGA_GREEN(VGA_GREEN), .VGA_BLUE(VGA_BLUE));
 
     assign usr_led = direction;
