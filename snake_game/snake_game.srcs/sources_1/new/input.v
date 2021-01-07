@@ -25,13 +25,9 @@ always @(posedge clk) begin
     end
 end
 
-/**
-  * snake is going left at the very beginning, this logic is 
-  * written in here and in logic.v
-  */
 always @(posedge clk) begin
     if (~reset_n) begin
-        direction_reg = {1'b0,1'b0,1'b0,1'b1};
+        direction_reg = 4'b0;
     end
     direction_reg = direction;
 end
@@ -56,18 +52,18 @@ always @(posedge clk) begin
 
         //opposite direction prevention
         if ((usr_btn_one_temp == UP) && (direction_reg == DOWN))
-            usr_btn_one <= DOWN;
+            usr_btn_one <= 4'b0;
         else if ((usr_btn_one_temp == DOWN) && (direction_reg == UP))
-            usr_btn_one <= UP;
+            usr_btn_one <= 4'b0;
         else if ((usr_btn_one_temp == RIGHT) && (direction_reg == LEFT))
-            usr_btn_one <= LEFT;
+            usr_btn_one <= 4'b0;
         else if ((usr_btn_one_temp == LEFT) && (direction_reg == RIGHT))
-            usr_btn_one <= RIGHT; 
+            usr_btn_one <= 4'b0; 
         else if (usr_btn_one_temp != 0)
             usr_btn_one <= usr_btn_one_temp;
     end
 end
 
-assign direction = (|usr_btn) ? usr_btn_one : direction_reg;
+assign direction = (|usr_btn_one) ? usr_btn_one : direction_reg;
 
 endmodule

@@ -38,7 +38,7 @@ output reg game_ended
                 TILE_EMPTY = 21,
                 TILE_TL = 22,
                 TILE_TR = 23,
-                NULL = 31;
+                NULL = TILE_EMPTY;
 
     //snake array
     reg [7:0] snake_pos[CALC_COL*CALC_ROW-1:0];
@@ -101,7 +101,7 @@ output reg game_ended
         end
 
         for (i = 0; i < CALC_COL*CALC_ROW; i = i + 1) begin
-            if (snake_len > i) begin
+            if (i < snake_len) begin
                 calc_map[snake_pos[i]] = snake_tile_type[i];
             end
         end
@@ -134,7 +134,7 @@ output reg game_ended
             end
         end
         else if (~game_ended) begin
-            if (timer) begin
+            if (timer && game_started) begin
                 if (direction[0]) begin //UP
                     collided <= (snake_pos[0] < CALC_COL);
                 end else 
@@ -143,7 +143,8 @@ output reg game_ended
                 end else
                 if (direction[2]) begin //DOWN
                     collided <= ((snake_pos[0] ) >= CALC_COL*(CALC_ROW-1));
-                end else begin //LEFT, which is also the default direction
+                end else 
+                if (direction[3]) begin
                     collided <= ((snake_pos[0]%CALC_COL) == 0);
                 end
                 _move = ~collided;
@@ -183,66 +184,86 @@ output reg game_ended
         end
     end
 
-    localparam UP       = 4'b1000;
-    localparam RIGHT    = 4'b0100;
-    localparam DOWN     = 4'b0010;
-    localparam LEFT     = 4'b0001;
+    localparam UP       = 8'b11110010; //-CALC_COL
+    localparam RIGHT    = 8'b00000001; //1
+    localparam DOWN     = 8'b00001110; //CALC_COL
+    localparam LEFT     = 8'b11111111; //-1
 
     //snake tile type
     integer ti;
-    reg [3:0]left_snake_body_direction[CALC_ROW*CALC_COL-1:0];
-    reg [3:0]right_snake_body_direction[CALC_ROW*CALC_COL-1:0];
+    reg [7:0]left_snake_body_direction[CALC_ROW*CALC_COL-1:0];
+    reg [7:0]right_snake_body_direction[CALC_ROW*CALC_COL-1:0];
     always @(posedge clk) begin
-        if (reset_n) begin
-            
+        if (~reset_n) begin
+            for (ti = 0; ti < CALC_COL*CALC_ROW; ti = ti + 1) begin
+                snake_tile_type[ti] = NULL;
+            end
+            snake_tile_type[0] = SNAKE_H_B;
+            snake_tile_type[1] = SNAKE_B_V;
+            snake_tile_type[2] = SNAKE_B_V;
+            snake_tile_type[3] = SNAKE_B_V;
+            snake_tile_type[4] = SNAKE_T_T;
         end else begin
-            if (_move) begin
-                if (snake_pos[0] - snake_pos[1] == -1) //LEFT
-                    snake_tile_type[0] = SNAKE_H_R;
-                else if (snake_pos[0] - snake_pos[1] == 1) //RIGHT
-                    snake_tile_type[0] = SNAKE_H_L;
-                else if (snake_pos[0] - snake_pos[1] == -CALC_COL) //TOP
-                    snake_tile_type[0] = SNAKE_H_B;
-                else if (snake_pos[0] - snake_pos[1] == CALC_COL) //BOTTOM
-                    snake_tile_type[0] = SNAKE_H_T;
-                
-                for (ti = 1; ti < CALC_COL*CALC_ROW-1; ti = ti + 1) begin
-                    if (snake_pos[ti] != NULL) begin
-                    if (snake_pos[ti] - snake_pos[ti-1] == -1) left_snake_body_direction[ti] = LEFT;
-                    else if (snake_pos[ti] - snake_pos[ti-1] == 1) left_snake_body_direction[ti] = RIGHT;
-                    else if (snake_pos[ti] - snake_pos[ti-1] == -CALC_COL) left_snake_body_direction[ti] = UP;
-                    else if (snake_pos[ti] - snake_pos[ti-1] == CALC_COL) left_snake_body_direction[ti] = DOWN;
-
-                    if (snake_pos[ti] - snake_pos[ti+1] == -1) right_snake_body_direction[ti] = LEFT;
-                    else if (snake_pos[ti] - snake_pos[ti+1] == 1) right_snake_body_direction[ti] = RIGHT;
-                    else if (snake_pos[ti] - snake_pos[ti+1] == -CALC_COL) right_snake_body_direction[ti] = UP;
-                    else if (snake_pos[ti] - snake_pos[ti+1] == CALC_COL) right_snake_body_direction[ti] = DOWN;
-                    end
-                end
-                for (ti = 1; ti < CALC_COL*CALC_ROW-1; ti = ti + 1) begin
-                    if (snake_pos[ti] != NULL) begin
-                    if (((left_snake_body_direction[ti] == LEFT) && (right_snake_body_direction[ti] == RIGHT)) ||
-                        ((left_snake_body_direction[ti] == RIGHT) && (right_snake_body_direction[ti] == LEFT)))
-                        snake_tile_type[ti] = SNAKE_B_H;
-                    if (((left_snake_body_direction[ti] == UP) && (right_snake_body_direction[ti] == DOWN)) ||
-                        ((left_snake_body_direction[ti] == DOWN) && (right_snake_body_direction[ti] == UP)))
-                        snake_tile_type[ti] = SNAKE_B_V;
-
-                    if (((left_snake_body_direction[ti] == UP) && (right_snake_body_direction[ti] == RIGHT)) ||
-                        ((left_snake_body_direction[ti] == RIGHT) && (right_snake_body_direction[ti] == UP)))
-                        snake_tile_type[ti] = SNAKE_B_T2R;
-                    if (((left_snake_body_direction[ti] == DOWN) && (right_snake_body_direction[ti] == RIGHT)) ||
-                        ((left_snake_body_direction[ti] == RIGHT) && (right_snake_body_direction[ti] == DOWN)))
-                        snake_tile_type[ti] = SNAKE_B_B2R;
-                    if (((left_snake_body_direction[ti] == UP) && (right_snake_body_direction[ti] == LEFT)) ||
-                        ((left_snake_body_direction[ti] == LEFT) && (right_snake_body_direction[ti] == UP)))
-                        snake_tile_type[ti] = SNAKE_B_T2L;
-                    if (((left_snake_body_direction[ti] == DOWN) && (right_snake_body_direction[ti] == LEFT)) ||
-                        ((left_snake_body_direction[ti] == LEFT) && (right_snake_body_direction[ti] == DOWN)))
-                        snake_tile_type[ti] = SNAKE_B_L2B;
-                    end
+            if      (snake_pos[0] - snake_pos[1] == LEFT) //LEFT
+                snake_tile_type[0] = SNAKE_H_R;
+            else if (snake_pos[0] - snake_pos[1] == RIGHT) //RIGHT
+                snake_tile_type[0] = SNAKE_H_L;
+            else if (snake_pos[0] - snake_pos[1] == UP) //TOP
+                snake_tile_type[0] = SNAKE_H_B;
+            else if (snake_pos[0] - snake_pos[1] == DOWN) //BOTTOM
+                snake_tile_type[0] = SNAKE_H_T;
+            
+            for (ti = 1; ti < CALC_COL*CALC_ROW-1; ti = ti + 1) begin
+                if (ti < snake_len) begin
+                    left_snake_body_direction[ti] = snake_pos[ti] - snake_pos[ti-1];
+                    right_snake_body_direction[ti] = snake_pos[ti] - snake_pos[ti+1];
                 end
             end
+            for (ti = 1; ti < CALC_COL*CALC_ROW-1; ti = ti + 1) begin
+                if (ti < snake_len-1) begin
+                    if (left_snake_body_direction[ti] == LEFT) begin
+                        if (right_snake_body_direction[ti] == RIGHT) 
+                            snake_tile_type[ti] = SNAKE_B_H;
+                        if (right_snake_body_direction[ti] == DOWN)
+                            snake_tile_type[ti] = SNAKE_B_T2R;
+                        if (right_snake_body_direction[ti] == UP)
+                            snake_tile_type[ti] = SNAKE_B_B2R;
+                    end
+                    if (left_snake_body_direction[ti] == RIGHT) begin
+                        if (right_snake_body_direction[ti] == LEFT) 
+                            snake_tile_type[ti] = SNAKE_B_H;
+                        if (right_snake_body_direction[ti] == DOWN)
+                            snake_tile_type[ti] = SNAKE_B_T2L;
+                        if (right_snake_body_direction[ti] == UP)
+                            snake_tile_type[ti] = SNAKE_B_L2B;
+                    end
+                    if (left_snake_body_direction[ti] == UP) begin
+                        if (right_snake_body_direction[ti] == RIGHT) 
+                            snake_tile_type[ti] = SNAKE_B_L2B;
+                        if (right_snake_body_direction[ti] == DOWN)
+                            snake_tile_type[ti] = SNAKE_B_V;
+                        if (right_snake_body_direction[ti] == LEFT)
+                            snake_tile_type[ti] = SNAKE_B_B2R;
+                    end
+                    if (left_snake_body_direction[ti] == DOWN) begin
+                        if (right_snake_body_direction[ti] == RIGHT) 
+                            snake_tile_type[ti] = SNAKE_B_T2L;
+                        if (right_snake_body_direction[ti] == UP)
+                            snake_tile_type[ti] = SNAKE_B_V;
+                        if (right_snake_body_direction[ti] == LEFT)
+                            snake_tile_type[ti] = SNAKE_B_T2R;
+                    end
+                end else
+                    snake_tile_type[ti] = NULL;
+            end
+            if      (snake_pos[snake_len-1] - snake_pos[snake_len-2] == LEFT) //LEFT
+                snake_tile_type[snake_len-1] = SNAKE_T_R;
+            else if (snake_pos[snake_len-1] - snake_pos[snake_len-2] == RIGHT) //RIGHT
+                snake_tile_type[snake_len-1] = SNAKE_T_L;
+            else if (snake_pos[snake_len-1] - snake_pos[snake_len-2] == UP) //TOP
+                snake_tile_type[snake_len-1] = SNAKE_T_B;
+            else if (snake_pos[snake_len-1] - snake_pos[snake_len-2] == DOWN) //BOTTOM
+                snake_tile_type[snake_len-1] = SNAKE_T_T;
         end
     end
 
