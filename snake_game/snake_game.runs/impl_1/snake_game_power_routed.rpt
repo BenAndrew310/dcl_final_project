@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Wed Jan  6 18:32:20 2021
-| Host             : DESKTOP-L9EPDB3 running 64-bit major release  (build 9200)
+| Date             : Thu Jan  7 19:32:02 2021
+| Host             : DESKTOP-1P7FONU running 64-bit major release  (build 9200)
 | Command          : report_power -file snake_game_power_routed.rpt -pb snake_game_power_summary_routed.pb -rpx snake_game_power_routed.rpx
 | Design           : snake_game
 | Device           : xc7a35ticsg324-1L
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.116        |
+| Total On-Chip Power (W)  | 0.123        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.053        |
+| Dynamic (W)              | 0.060        |
 | Device Static (W)        | 0.062        |
 | Effective TJA (C/W)      | 4.8          |
 | Max Ambient (C)          | 99.4         |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.005 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     2491 |       --- |             --- |
-|   LUT as Logic |     0.002 |     1374 |     20800 |            6.61 |
-|   CARRY4       |    <0.001 |       37 |      8150 |            0.45 |
-|   Register     |    <0.001 |      723 |     41600 |            1.74 |
-|   F7/F8 Muxes  |    <0.001 |       34 |     32600 |            0.10 |
-|   Others       |     0.000 |       13 |       --- |             --- |
-| Signals        |     0.004 |     2021 |       --- |             --- |
+| Clocks         |     0.012 |        3 |       --- |             --- |
+| Slice Logic    |     0.002 |     5466 |       --- |             --- |
+|   LUT as Logic |     0.002 |     3238 |     20800 |           15.57 |
+|   CARRY4       |    <0.001 |       91 |      8150 |            1.12 |
+|   F7/F8 Muxes  |    <0.001 |      135 |     32600 |            0.41 |
+|   Register     |    <0.001 |     1621 |     41600 |            3.90 |
+|   Others       |     0.000 |       12 |       --- |             --- |
+| Signals        |     0.005 |     4341 |       --- |             --- |
 | Block RAM      |     0.031 |       24 |        50 |           48.00 |
 | DSPs           |    <0.001 |        1 |        90 |            1.11 |
 | I/O            |     0.011 |       24 |       210 |           11.43 |
 | Static Power   |     0.062 |          |           |                 |
-| Total          |     0.116 |          |           |                 |
+| Total          |     0.123 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       0.950 |     0.048 |       0.041 |      0.006 |       NA    | Unspecified | NA         |
+| Vccint    |       0.950 |     0.055 |       0.049 |      0.006 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.012 |       0.000 |      0.011 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -143,9 +143,9 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| snake_game |     0.053 |
-|   Logic    |     0.007 |
-|   View     |     0.035 |
+| snake_game |     0.060 |
+|   Logic    |     0.013 |
+|   View     |     0.036 |
 |     ram1   |     0.031 |
 |     vs0    |     0.001 |
 +------------+-----------+

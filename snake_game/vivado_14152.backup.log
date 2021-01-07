@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Jan  6 17:27:37 2021
+# Process ID: 14152
+# Current directory: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13604 C:\Users\Shlab29\Desktop\dcl_final_project\snake_game\snake_game.xpr
+# Log file: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/vivado.log
+# Journal file: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.

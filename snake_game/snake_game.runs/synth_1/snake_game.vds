@@ -2,12 +2,12 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Wed Jan  6 18:21:17 2021
-# Process ID: 13096
-# Current directory: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1
+# Start of session at: Thu Jan  7 19:14:14 2021
+# Process ID: 5268
+# Current directory: C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1
 # Command line: vivado.exe -log snake_game.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source snake_game.tcl
-# Log file: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/snake_game.vds
-# Journal file: C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1\vivado.jou
+# Log file: C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/snake_game.vds
+# Journal file: C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source snake_game.tcl -notrace
 Command: synth_design -top snake_game -part xc7a35ticsg324-1L
@@ -17,21 +17,21 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 4000
+INFO: [Synth 8-7075] Helper process launched with PID 7500
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.664 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.574 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'snake_game' [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/snake_game.v:23]
+INFO: [Synth 8-6157] synthesizing module 'snake_game' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/snake_game.v:23]
 	Parameter TILE_LENGTH bound to: 40 - type: integer 
 	Parameter COLUMN bound to: 16 - type: integer 
 	Parameter ROW bound to: 12 - type: integer 
-INFO: [Synth 8-6157] synthesizing module '_input' [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/input.v:1]
+INFO: [Synth 8-6157] synthesizing module '_input' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/input.v:1]
 	Parameter UP bound to: 4'b1000 
 	Parameter RIGHT bound to: 4'b0100 
 	Parameter DOWN bound to: 4'b0010 
 	Parameter LEFT bound to: 4'b0001 
-INFO: [Synth 8-6155] done synthesizing module '_input' (1#1) [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/input.v:1]
-INFO: [Synth 8-6157] synthesizing module 'logic' [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:3]
+INFO: [Synth 8-6155] done synthesizing module '_input' (1#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/input.v:1]
+INFO: [Synth 8-6157] synthesizing module 'logic' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:3]
 	Parameter TILE_LENGTH bound to: 40 - type: integer 
 	Parameter COLUMN bound to: 16 - type: integer 
 	Parameter ROW bound to: 12 - type: integer 
@@ -62,20 +62,19 @@ INFO: [Synth 8-6157] synthesizing module 'logic' [C:/Users/Shlab29/Desktop/dcl_f
 	Parameter TILE_TL bound to: 22 - type: integer 
 	Parameter TILE_TR bound to: 23 - type: integer 
 	Parameter NULL bound to: 31 - type: integer 
-	Parameter TICK_PER_CLK bound to: 80000000 - type: integer 
-WARNING: [Synth 8-6090] variable 'snake_pos' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:170]
-WARNING: [Synth 8-6090] variable 'snake_pos' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:170]
-WARNING: [Synth 8-6090] variable 'snake_pos' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:170]
-WARNING: [Synth 8-6090] variable 'snake_pos' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:170]
-WARNING: [Synth 8-6090] variable 'snake_pos' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:170]
-INFO: [Synth 8-6155] done synthesizing module 'logic' (2#1) [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:3]
-INFO: [Synth 8-6157] synthesizing module 'view' [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/view.v:3]
+	Parameter TICK_PER_CLK bound to: 70000000 - type: integer 
+	Parameter UP bound to: 4'b1000 
+	Parameter RIGHT bound to: 4'b0100 
+	Parameter DOWN bound to: 4'b0010 
+	Parameter LEFT bound to: 4'b0001 
+INFO: [Synth 8-6155] done synthesizing module 'logic' (2#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:3]
+INFO: [Synth 8-6157] synthesizing module 'view' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/view.v:3]
 	Parameter TILE_LENGTH bound to: 40 - type: integer 
 	Parameter COLUMN bound to: 16 - type: integer 
 	Parameter ROW bound to: 12 - type: integer 
 	Parameter VBUF_W bound to: 640 - type: integer 
 	Parameter VBUF_H bound to: 480 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'vga_sync' [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/vga_sync.v:19]
+INFO: [Synth 8-6157] synthesizing module 'vga_sync' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/vga_sync.v:19]
 	Parameter HD bound to: 640 - type: integer 
 	Parameter HF bound to: 48 - type: integer 
 	Parameter HB bound to: 16 - type: integer 
@@ -84,73 +83,75 @@ INFO: [Synth 8-6157] synthesizing module 'vga_sync' [C:/Users/Shlab29/Desktop/dc
 	Parameter VF bound to: 10 - type: integer 
 	Parameter VB bound to: 33 - type: integer 
 	Parameter VR bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'vga_sync' (3#1) [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/vga_sync.v:19]
-INFO: [Synth 8-6157] synthesizing module 'clk_divider' [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/clk_divider.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'vga_sync' (3#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/vga_sync.v:19]
+INFO: [Synth 8-6157] synthesizing module 'clk_divider' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/clk_divider.v:21]
 	Parameter divider bound to: 2 - type: integer 
 	Parameter half_divider bound to: 1 - type: integer 
 	Parameter divider_minus_one bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clk_divider' (4#1) [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/clk_divider.v:21]
-INFO: [Synth 8-6157] synthesizing module 'sram' [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'clk_divider' (4#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/clk_divider.v:21]
+INFO: [Synth 8-6157] synthesizing module 'sram' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v:8]
 	Parameter DATA_WIDTH bound to: 12 - type: integer 
 	Parameter ADDR_WIDTH bound to: 18 - type: integer 
 	Parameter RAM_SIZE bound to: 38400 - type: integer 
-INFO: [Synth 8-3876] $readmem data file 'assets-mem/all_in_1.mem' is read successfully [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'sram' (5#1) [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'view' (6#1) [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/view.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'snake_game' (7#1) [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/snake_game.v:23]
+INFO: [Synth 8-3876] $readmem data file 'assets-mem/all_in_1.mem' is read successfully [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'sram' (5#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'view' (6#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/view.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'snake_game' (7#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/snake_game.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished RTL Elaboration : Time (s): cpu = 00:01:18 ; elapsed = 00:01:20 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:28 ; elapsed = 00:01:31 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:28 ; elapsed = 00:01:31 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3375.180 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 4246.605 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]
-Finished Parsing XDC File [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/snake_game_propImpl.xdc].
+Parsing XDC File [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]
+Finished Parsing XDC File [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/snake_game_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/snake_game_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 3375.180 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 4246.605 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.225 . Memory (MB): peak = 3375.180 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.267 . Memory (MB): peak = 4246.605 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:19 ; elapsed = 00:01:21 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Constraint Validation : Time (s): cpu = 00:01:55 ; elapsed = 00:01:58 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:19 ; elapsed = 00:01:21 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:55 ; elapsed = 00:01:58 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:55 ; elapsed = 00:01:58 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:04:20 ; elapsed = 00:04:38 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:05:27 ; elapsed = 00:06:05 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   3 Input   32 Bit       Adders := 277   
 	   2 Input   10 Bit       Adders := 2     
+	   3 Input    9 Bit       Adders := 277   
 	   2 Input    9 Bit       Adders := 1     
 	   2 Input    8 Bit       Adders := 5     
 +---Registers : 
@@ -160,19 +161,23 @@ Detailed RTL Component Info :
 	                8 Bit    Registers := 6     
 	                7 Bit    Registers := 1     
 	                5 Bit    Registers := 288   
-	                4 Bit    Registers := 3     
+	                4 Bit    Registers := 279   
 	                1 Bit    Registers := 7     
 +---RAMs : 
 	             450K Bit	(38400 X 12 bit)          RAMs := 1     
 +---Muxes : 
 	   2 Input   12 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 46    
-	   2 Input    5 Bit        Muxes := 38364 
-	   3 Input    5 Bit        Muxes := 139   
+	   2 Input    8 Bit        Muxes := 292   
+	   2 Input    5 Bit        Muxes := 20580 
+	   9 Input    5 Bit        Muxes := 138   
+	   8 Input    5 Bit        Muxes := 138   
+	   5 Input    5 Bit        Muxes := 138   
+	   4 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 276   
 	   2 Input    4 Bit        Muxes := 4     
-	   5 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 144   
+	   5 Input    1 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 8     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -191,212 +196,105 @@ Start Cross Boundary and Area Optimization
 DSP Report: Generating DSP View/start_point_reg, operation Mode is: ((A:0x640)*B)'.
 DSP Report: register View/start_point_reg is absorbed into DSP View/start_point_reg.
 DSP Report: operator View/start_point0 is absorbed into DSP View/start_point_reg.
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[10][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[55][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[56][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[66][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[80][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[89][0] )
-INFO: [Synth 8-3886] merging instance 'map_reg[27][0]' (FD) to 'map_reg[78][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[78][0]' (FD) to 'map_reg[81][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[81][0]' (FD) to 'map_reg[91][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[91][0]' (FD) to 'map_reg[107][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[107][0]' (FD) to 'map_reg[118][0]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\map_reg[118][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[9][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[11][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[12][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[14][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[15][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[19][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[20][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[21][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[22][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[23][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[24][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[25][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[26][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[27][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[28][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[29][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[31][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[32][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[33][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[34][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[35][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[36][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[37][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[39][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[40][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[41][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[42][0] )
-INFO: [Synth 8-3886] merging instance 'calc_map_reg[43][0]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'calc_map_reg[43][1]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'calc_map_reg[43][2]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'calc_map_reg[43][3]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'calc_map_reg[43][4]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[44][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[45][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[47][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[48][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[50][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[51][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[52][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[53][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[54][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[57][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[58][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[59][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[60][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[61][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[62][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[65][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[67][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[68][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[69][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[70][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[71][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[72][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[73][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[74][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[77][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[78][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[93][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[100][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_tile_type_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[137][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[93][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[92][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[90][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[88][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[87][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[86][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[85][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[84][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[83][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[81][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[58][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[59][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[64][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[44][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[45][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[48][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[46][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[74][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[72][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[71][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[70][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[69][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[68][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[67][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[66][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[75][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[76][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[77][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[49][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[9][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[61][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[50][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[62][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[53][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[52][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[60][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[57][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[56][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[54][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[16][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[7][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[25][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[30][4] )
+INFO: [Synth 8-3886] merging instance 'snake_len_reg[1]' (FDRE) to 'snake_len_reg[3]'
 INFO: [Synth 8-3886] merging instance 'snake_len_reg[0]' (FDSE) to 'snake_len_reg[2]'
-INFO: [Synth 8-3886] merging instance 'snake_len_reg[5]' (FDRE) to 'snake_len_reg[7]'
-INFO: [Synth 8-3886] merging instance 'snake_len_reg[6]' (FDRE) to 'snake_len_reg[7]'
-INFO: [Synth 8-3886] merging instance 'snake_len_reg[7]' (FDRE) to 'snake_len_reg[4]'
+INFO: [Synth 8-3886] merging instance 'snake_len_reg[5]' (FDRE) to 'snake_len_reg[3]'
+INFO: [Synth 8-3886] merging instance 'snake_len_reg[6]' (FDRE) to 'snake_len_reg[3]'
+INFO: [Synth 8-3886] merging instance 'snake_len_reg[7]' (FDRE) to 'snake_len_reg[3]'
 INFO: [Synth 8-3886] merging instance 'snake_len_reg[3]' (FDRE) to 'snake_len_reg[4]'
-INFO: [Synth 8-3886] merging instance 'snake_len_reg[4]' (FDRE) to 'snake_len_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_len_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_len_reg[4] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_len_reg[2] )
-INFO: [Synth 8-3886] merging instance 'map_reg[15][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[15][1]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[15][2]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[15][3]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[15][4]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[26][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[28][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[29][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[33][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[34][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[38][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[39][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[40][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[41][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[42][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[43][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[44][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[45][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[46][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[49][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[50][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[52][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[53][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[54][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[55][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[56][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[57][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[58][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[60][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[61][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[62][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[65][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[66][0]' (FD) to 'map_reg[66][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[66][1]' (FD) to 'map_reg[66][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[66][2]' (FD) to 'map_reg[66][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[66][3]' (FD) to 'map_reg[66][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[67][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[68][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[70][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[71][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[73][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[74][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[75][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[76][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[77][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[82][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[83][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[84][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[85][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[86][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[87][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[90][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[92][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[93][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[94][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[97][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[98][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[99][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[100][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[101][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[104][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[105][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[122][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[131][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[160][0]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[160][1]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[160][2]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[160][3]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[160][4]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[175][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[175][1]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[175][2]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[175][3]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[175][4]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[176][0]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[176][1]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[176][2]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[176][3]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[176][4]' (FD) to 'map_reg[190][0]'
-INFO: [Synth 8-3886] merging instance 'map_reg[190][0]' (FD) to 'map_reg[191][2]'
-INFO: [Synth 8-3886] merging instance 'map_reg[190][1]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[190][2]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[190][3]' (FD) to 'map_reg[190][4]'
-INFO: [Synth 8-3886] merging instance 'map_reg[190][4]' (FD) to 'map_reg[191][0]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\map_reg[191][3] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\map_reg[191][4] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[30][1] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[30][4] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[30][3] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[30][2] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[30][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[17][1] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[17][4] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[17][3] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[17][2] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[17][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[8][1] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[8][4] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[8][3] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[8][2] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[8][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[23][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[23][1] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[23][2] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[23][3] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[23][4] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[25][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[25][1] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[25][2] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[25][3] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\snake_pos_reg[25][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\map_reg[66][4] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[46][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[49][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[63][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[64][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[75][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[76][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\map_reg[103][0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\calc_map_reg[83][0] )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\right_snake_body_direction_reg[30][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\right_snake_body_direction_reg[30][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\right_snake_body_direction_reg[30][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\right_snake_body_direction_reg[30][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[30][0] )
+INFO: [Synth 8-3886] merging instance 'snake_tile_type_reg[30][1]' (FDSE) to 'snake_tile_type_reg[30][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[30][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[30][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[65][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[63][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[40][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[55][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[51][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[23][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[91][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[11][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[5][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[117][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[118][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[115][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[113][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[111][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[110][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[109][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[108][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[100][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[99][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[96][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[95][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[94][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[121][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[120][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[129][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[128][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[127][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[124][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[123][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[138][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[133][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[132][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[131][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\snake_tile_type_reg[130][4] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:08:46 ; elapsed = 00:09:24 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:12:58 ; elapsed = 00:13:44 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -426,13 +324,15 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:08:59 ; elapsed = 00:09:38 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:13:14 ; elapsed = 00:14:01 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
+info: optimization accepted worst group hill climbing move (3614.0/oG. 119.0ps)
+info: optimization accepted worst group hill climbing move (3986.0/oG.CP 79.0ps)
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:09:04 ; elapsed = 00:09:42 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Timing Optimization : Time (s): cpu = 00:15:17 ; elapsed = 00:16:04 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -452,7 +352,7 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:09:06 ; elapsed = 00:09:44 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Technology Mapping : Time (s): cpu = 00:15:21 ; elapsed = 00:16:08 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -470,37 +370,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:09:09 ; elapsed = 00:09:48 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished IO Insertion : Time (s): cpu = 00:15:24 ; elapsed = 00:16:12 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:09:09 ; elapsed = 00:09:48 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Renaming Generated Instances : Time (s): cpu = 00:15:24 ; elapsed = 00:16:12 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:09:09 ; elapsed = 00:09:48 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:15:25 ; elapsed = 00:16:12 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:09:09 ; elapsed = 00:09:48 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Renaming Generated Ports : Time (s): cpu = 00:15:25 ; elapsed = 00:16:12 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:09:10 ; elapsed = 00:09:48 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Handling Custom Attributes : Time (s): cpu = 00:15:26 ; elapsed = 00:16:13 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:09:10 ; elapsed = 00:09:48 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Renaming Generated Nets : Time (s): cpu = 00:15:26 ; elapsed = 00:16:13 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -517,43 +417,43 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     1|
-|2     |CARRY4   |    37|
+|2     |CARRY4   |    91|
 |3     |DSP48E1  |     1|
-|4     |LUT1     |     9|
-|5     |LUT2     |   273|
-|6     |LUT3     |    57|
-|7     |LUT4     |   260|
-|8     |LUT5     |   137|
-|9     |LUT6     |   936|
-|10    |MUXF7    |    29|
-|11    |MUXF8    |     5|
+|4     |LUT1     |    12|
+|5     |LUT2     |   272|
+|6     |LUT3     |   173|
+|7     |LUT4     |   202|
+|8     |LUT5     |   701|
+|9     |LUT6     |  2238|
+|10    |MUXF7    |    95|
+|11    |MUXF8    |    40|
 |12    |RAMB36E1 |    24|
-|30    |FDRE     |   705|
-|31    |FDSE     |    18|
+|30    |FDRE     |  1585|
+|31    |FDSE     |    36|
 |32    |IBUF     |     6|
 |33    |OBUF     |    18|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:09:10 ; elapsed = 00:09:48 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Finished Writing Synthesis Report : Time (s): cpu = 00:15:26 ; elapsed = 00:16:13 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:07:58 ; elapsed = 00:09:35 . Memory (MB): peak = 3375.180 ; gain = 2361.516
-Synthesis Optimization Complete : Time (s): cpu = 00:09:10 ; elapsed = 00:09:49 . Memory (MB): peak = 3375.180 ; gain = 2361.516
+Synthesis Optimization Runtime : Time (s): cpu = 00:13:39 ; elapsed = 00:15:57 . Memory (MB): peak = 4246.605 ; gain = 3233.031
+Synthesis Optimization Complete : Time (s): cpu = 00:15:26 ; elapsed = 00:16:13 . Memory (MB): peak = 4246.605 ; gain = 3233.031
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 3375.180 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 96 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 4246.605 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 251 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'snake_game' is not ideal for floorplanning, since the cellview 'logic' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 3375.180 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 4246.605 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-234 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+127 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:09:16 ; elapsed = 00:09:56 . Memory (MB): peak = 3375.180 ; gain = 2361.516
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Shlab29/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/snake_game.dcp' has been generated.
+synth_design: Time (s): cpu = 00:15:32 ; elapsed = 00:16:21 . Memory (MB): peak = 4246.605 ; gain = 3233.031
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/snake_game.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file snake_game_utilization_synth.rpt -pb snake_game_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jan  6 18:31:16 2021...
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  7 19:30:38 2021...

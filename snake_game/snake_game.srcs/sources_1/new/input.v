@@ -43,6 +43,7 @@ always @(posedge clk) begin
     if (~reset_n) begin
         usr_btn_one = 0;
     end else begin
+        //make usr_btn have only one "1" and others are "0"
         for (i = 0; i < 4; i = i + 1) begin
             usr_btn_one_temp[i] = usr_btn[i];
             if (usr_btn[i]) begin
@@ -52,11 +53,8 @@ always @(posedge clk) begin
                 end
             end
         end
-        // if ((usr_btn_one_temp == UP) &&  (direction_reg == DOWN) ||
-        //     (usr_btn_one_temp == DOWN) &&  (direction_reg == UP) ||
-        //     (usr_btn_one_temp == LEFT) &&  (direction_reg == RIGHT) ||
-        //     (usr_btn_one_temp == RIGHT) &&  (direction_reg == LEFT) ) begin
-        //     usr_btn_one <= usr_btn_one;
+
+        //opposite direction prevention
         if ((usr_btn_one_temp == UP) && (direction_reg == DOWN))
             usr_btn_one <= DOWN;
         else if ((usr_btn_one_temp == DOWN) && (direction_reg == UP))
@@ -65,7 +63,7 @@ always @(posedge clk) begin
             usr_btn_one <= LEFT;
         else if ((usr_btn_one_temp == LEFT) && (direction_reg == RIGHT))
             usr_btn_one <= RIGHT; 
-        else 
+        else if (usr_btn_one_temp != 0)
             usr_btn_one <= usr_btn_one_temp;
     end
 end
