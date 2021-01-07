@@ -17,9 +17,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 11756
+INFO: [Synth 8-7075] Helper process launched with PID 5800
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.223 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.711 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'snake_game' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/snake_game.v:23]
 	Parameter TILE_LENGTH bound to: 40 - type: integer 
@@ -30,7 +30,10 @@ INFO: [Synth 8-6157] synthesizing module '_input' [C:/Users/Shlab20/Desktop/dcl_
 	Parameter RIGHT bound to: 4'b0100 
 	Parameter DOWN bound to: 4'b0010 
 	Parameter LEFT bound to: 4'b0001 
-INFO: [Synth 8-6155] done synthesizing module '_input' (1#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/input.v:1]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/debounce.v:3]
+	Parameter DEBOUNCE_PERIOD bound to: 2000000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/debounce.v:3]
+INFO: [Synth 8-6155] done synthesizing module '_input' (2#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/input.v:1]
 INFO: [Synth 8-6157] synthesizing module 'logic' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:3]
 	Parameter TILE_LENGTH bound to: 40 - type: integer 
 	Parameter COLUMN bound to: 16 - type: integer 
@@ -67,7 +70,7 @@ INFO: [Synth 8-6157] synthesizing module 'logic' [C:/Users/Shlab20/Desktop/dcl_f
 	Parameter RIGHT bound to: 8'b00000001 
 	Parameter DOWN bound to: 8'b00001110 
 	Parameter LEFT bound to: 8'b11111111 
-INFO: [Synth 8-6155] done synthesizing module 'logic' (2#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'logic' (3#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v:3]
 INFO: [Synth 8-6157] synthesizing module 'view' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/view.v:3]
 	Parameter TILE_LENGTH bound to: 40 - type: integer 
 	Parameter COLUMN bound to: 16 - type: integer 
@@ -83,33 +86,33 @@ INFO: [Synth 8-6157] synthesizing module 'vga_sync' [C:/Users/Shlab20/Desktop/dc
 	Parameter VF bound to: 10 - type: integer 
 	Parameter VB bound to: 33 - type: integer 
 	Parameter VR bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'vga_sync' (3#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/vga_sync.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'vga_sync' (4#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/vga_sync.v:19]
 INFO: [Synth 8-6157] synthesizing module 'clk_divider' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/clk_divider.v:21]
 	Parameter divider bound to: 2 - type: integer 
 	Parameter half_divider bound to: 1 - type: integer 
 	Parameter divider_minus_one bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clk_divider' (4#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/clk_divider.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'clk_divider' (5#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/clk_divider.v:21]
 INFO: [Synth 8-6157] synthesizing module 'sram' [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v:8]
 	Parameter DATA_WIDTH bound to: 12 - type: integer 
 	Parameter ADDR_WIDTH bound to: 18 - type: integer 
 	Parameter RAM_SIZE bound to: 38400 - type: integer 
 INFO: [Synth 8-3876] $readmem data file 'assets-mem/all_in_1.mem' is read successfully [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'sram' (5#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'view' (6#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/view.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'snake_game' (7#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/snake_game.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'sram' (6#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'view' (7#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/view.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'snake_game' (8#1) [C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/snake_game.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished RTL Elaboration : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 4261.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 4261.152 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -120,22 +123,21 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/snake_game_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 4261.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 4261.152 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.278 . Memory (MB): peak = 4261.617 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.278 . Memory (MB): peak = 4261.152 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:44 ; elapsed = 00:01:46 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Constraint Validation : Time (s): cpu = 00:01:43 ; elapsed = 00:01:45 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:44 ; elapsed = 00:01:46 . Memory (MB): peak = 4261.617 ; gain = 3248.395
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:05:23 ; elapsed = 00:06:20 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:05:31 ; elapsed = 00:06:12 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -163,7 +165,7 @@ Detailed RTL Component Info :
 	   2 Input    5 Bit        Muxes := 21412 
 	   5 Input    5 Bit        Muxes := 140   
 	   3 Input    4 Bit        Muxes := 552   
-	   2 Input    4 Bit        Muxes := 143   
+	   2 Input    4 Bit        Muxes := 144   
 	   4 Input    4 Bit        Muxes := 1     
 	   5 Input    3 Bit        Muxes := 139   
 	   2 Input    3 Bit        Muxes := 3     
@@ -352,7 +354,7 @@ INFO: [Synth 8-3886] merging instance 'map_reg[160][2]' (FD) to 'map_reg[160][3]
 INFO: [Synth 8-3886] merging instance 'map_reg[160][3]' (FD) to 'map_reg[160][4]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\map_reg[160][4] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:14:30 ; elapsed = 00:15:34 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:14:37 ; elapsed = 00:15:23 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -382,13 +384,13 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:14:46 ; elapsed = 00:15:50 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:14:53 ; elapsed = 00:15:40 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:15:15 ; elapsed = 00:16:19 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Timing Optimization : Time (s): cpu = 00:15:03 ; elapsed = 00:15:50 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -408,7 +410,7 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:15:19 ; elapsed = 00:16:23 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Technology Mapping : Time (s): cpu = 00:15:07 ; elapsed = 00:15:54 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -426,37 +428,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:15:23 ; elapsed = 00:16:27 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished IO Insertion : Time (s): cpu = 00:15:11 ; elapsed = 00:15:58 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:15:23 ; elapsed = 00:16:27 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Renaming Generated Instances : Time (s): cpu = 00:15:11 ; elapsed = 00:15:58 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:15:24 ; elapsed = 00:16:28 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:15:11 ; elapsed = 00:15:58 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:15:24 ; elapsed = 00:16:28 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Renaming Generated Ports : Time (s): cpu = 00:15:11 ; elapsed = 00:15:58 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:15:24 ; elapsed = 00:16:28 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Handling Custom Attributes : Time (s): cpu = 00:15:12 ; elapsed = 00:15:59 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:15:24 ; elapsed = 00:16:28 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Renaming Generated Nets : Time (s): cpu = 00:15:12 ; elapsed = 00:15:59 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -473,43 +475,43 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     1|
-|2     |CARRY4   |    53|
+|2     |CARRY4   |    77|
 |3     |DSP48E1  |     1|
-|4     |LUT1     |     9|
-|5     |LUT2     |   217|
-|6     |LUT3     |   245|
-|7     |LUT4     |   263|
-|8     |LUT5     |   880|
-|9     |LUT6     |  1996|
-|10    |MUXF7    |    99|
+|4     |LUT1     |    13|
+|5     |LUT2     |   215|
+|6     |LUT3     |   234|
+|7     |LUT4     |   310|
+|8     |LUT5     |   923|
+|9     |LUT6     |  2040|
+|10    |MUXF7    |   101|
 |11    |MUXF8    |    40|
 |12    |RAMB36E1 |    24|
-|30    |FDRE     |  1573|
-|31    |FDSE     |    31|
+|30    |FDRE     |  1662|
+|31    |FDSE     |    32|
 |32    |IBUF     |     6|
 |33    |OBUF     |    18|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:15:24 ; elapsed = 00:16:28 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Finished Writing Synthesis Report : Time (s): cpu = 00:15:12 ; elapsed = 00:15:59 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:13:50 ; elapsed = 00:16:12 . Memory (MB): peak = 4261.617 ; gain = 3248.395
-Synthesis Optimization Complete : Time (s): cpu = 00:15:25 ; elapsed = 00:16:29 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+Synthesis Optimization Runtime : Time (s): cpu = 00:13:37 ; elapsed = 00:15:43 . Memory (MB): peak = 4261.152 ; gain = 3247.441
+Synthesis Optimization Complete : Time (s): cpu = 00:15:12 ; elapsed = 00:16:00 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 4261.617 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 217 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 4261.152 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 243 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'snake_game' is not ideal for floorplanning, since the cellview 'logic' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 4261.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 4261.152 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-192 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+194 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:15:30 ; elapsed = 00:16:36 . Memory (MB): peak = 4261.617 ; gain = 3248.395
+synth_design: Time (s): cpu = 00:15:19 ; elapsed = 00:16:07 . Memory (MB): peak = 4261.152 ; gain = 3247.441
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/snake_game.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file snake_game_utilization_synth.rpt -pb snake_game_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jan  8 01:41:05 2021...
+INFO: [Common 17-206] Exiting Vivado at Fri Jan  8 02:26:43 2021...

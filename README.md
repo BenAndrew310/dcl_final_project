@@ -8,8 +8,7 @@ click button on fpga
 - 2 DOWN
 - 3 LEFT
 # TODO
-- opposite direction prevention (bug found)
 - collision dectection (to snake body)
-- apple eating
+- apple eating and body lengthen
 - level
     - map

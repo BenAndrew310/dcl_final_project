@@ -89,6 +89,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/clk_divider.v
+  C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/debounce.v
   C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/input.v
   C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v
   C:/Users/Shlab20/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v

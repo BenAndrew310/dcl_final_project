@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Fri Jan  8 01:41:51 2021
+| Date         : Fri Jan  8 02:27:28 2021
 | Host         : DESKTOP-1P7FONU running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file snake_game_control_sets_placed.rpt
 | Design       : snake_game
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    13 |
-|    Minimum number of control sets                        |    13 |
+| Total control sets                                       |    18 |
+|    Minimum number of control sets                        |    18 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    52 |
+| Unused register locations in slices containing registers |    66 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    13 |
+| Total control sets |    18 |
 | >= 0 to < 4        |     2 |
-| >= 4 to < 6        |     3 |
+| >= 4 to < 6        |     4 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     2 |
 | >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     5 |
+| >= 16              |     9 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,34 +58,39 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |            1406 |          587 |
+| No           | No                    | No                     |            1402 |          606 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              52 |           17 |
-| Yes          | No                    | No                     |              65 |           43 |
+| No           | Yes                   | No                     |             140 |           42 |
+| Yes          | No                    | No                     |              69 |           40 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              81 |           40 |
+| Yes          | Yes                   | No                     |              83 |           40 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------------------+-------------------------------------+---------------------------------+------------------+----------------+--------------+
-|           Clock Signal           |            Enable Signal            |         Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------------------------+-------------------------------------+---------------------------------+------------------+----------------+--------------+
-|  View/clk_divider0/clk_out_reg_0 |                                     |                                 |                1 |              1 |         1.00 |
-|  View/clk_divider0/clk_out_reg_0 |                                     | Logic/RSTP                      |                2 |              2 |         1.00 |
-|  clk_IBUF_BUFG                   | Logic/snake_tile_type[1][3]_i_1_n_0 |                                 |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG                   | Logic/snake_tile_type[3][3]_i_1_n_0 |                                 |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG                   | Input/p_0_in                        |                                 |                3 |              4 |         1.33 |
-|  View/clk_divider0/clk_out_reg_0 | View/vs0/pixel_tick                 | View/vs0/clear                  |                4 |             10 |         2.50 |
-|  View/clk_divider0/clk_out_reg_0 | View/vs0/v_count_reg[9]_i_2_n_0     | View/vs0/v_count_reg[9]_i_1_n_0 |                2 |             10 |         5.00 |
-|  clk_IBUF_BUFG                   | reset_n_IBUF                        |                                 |                8 |             13 |         1.63 |
-|  clk_IBUF_BUFG                   |                                     | Logic/RSTP                      |                8 |             22 |         2.75 |
-|  clk_IBUF_BUFG                   |                                     | Logic/clear                     |                7 |             28 |         4.00 |
-|  clk_IBUF_BUFG                   | Logic/snake_pos_temp[1][7]_i_1_n_0  |                                 |               29 |             40 |         1.38 |
-|  clk_IBUF_BUFG                   | Logic/game_ended_reg_inv_n_0        | Logic/RSTP                      |               34 |             61 |         1.79 |
-|  clk_IBUF_BUFG                   |                                     |                                 |              586 |           1405 |         2.40 |
-+----------------------------------+-------------------------------------+---------------------------------+------------------+----------------+--------------+
++----------------------------------+-------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|           Clock Signal           |            Enable Signal            |                 Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------------------+-------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|  View/clk_divider0/clk_out_reg_0 |                                     |                                                 |                1 |              1 |         1.00 |
+|  View/clk_divider0/clk_out_reg_0 |                                     | Logic/RSTP                                      |                2 |              2 |         1.00 |
+|  clk_IBUF_BUFG                   | Logic/snake_tile_type[1][3]_i_1_n_0 |                                                 |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                   | Logic/snake_tile_type[2][3]_i_1_n_0 |                                                 |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                   | Logic/snake_tile_type[3][3]_i_1_n_0 |                                                 |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                   | Input/genblk1[3].Debounce/E[0]      |                                                 |                2 |              4 |         2.00 |
+|  View/clk_divider0/clk_out_reg_0 | View/vs0/h_count_next               | View/vs0/v_count_reg[9]_i_1_n_0                 |                4 |             10 |         2.50 |
+|  View/clk_divider0/clk_out_reg_0 | View/vs0/pixel_tick                 | View/vs0/h_count_reg[9]_i_1_n_0                 |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG                   | reset_n_IBUF                        |                                                 |                6 |             13 |         2.17 |
+|  clk_IBUF_BUFG                   |                                     | Input/genblk1[0].Debounce/counter[0]_i_1__1_n_0 |                6 |             22 |         3.67 |
+|  clk_IBUF_BUFG                   |                                     | Input/genblk1[1].Debounce/counter[0]_i_1__2_n_0 |                6 |             22 |         3.67 |
+|  clk_IBUF_BUFG                   |                                     | Input/genblk1[2].Debounce/counter[0]_i_1__3_n_0 |                6 |             22 |         3.67 |
+|  clk_IBUF_BUFG                   |                                     | Input/genblk1[3].Debounce/clear                 |                6 |             22 |         3.67 |
+|  clk_IBUF_BUFG                   |                                     | Logic/RSTP                                      |                9 |             22 |         2.44 |
+|  clk_IBUF_BUFG                   |                                     | Logic/clear                                     |                7 |             28 |         4.00 |
+|  clk_IBUF_BUFG                   | Logic/snake_pos_temp[1][7]_i_1_n_0  |                                                 |               26 |             40 |         1.54 |
+|  clk_IBUF_BUFG                   | Logic/game_ended_reg_inv_n_0        | Logic/RSTP                                      |               32 |             63 |         1.97 |
+|  clk_IBUF_BUFG                   |                                     |                                                 |              605 |           1401 |         2.32 |
++----------------------------------+-------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
 
 

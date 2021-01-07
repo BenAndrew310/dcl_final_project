@@ -32,17 +32,29 @@ always @(posedge clk) begin
     direction_reg = direction;
 end
 
+wire [3:0] debounced_usr_btn;
+
+genvar gi;
+generate
+  for(gi=0;gi<4;gi=gi+1)begin
+    debounce Debounce(
+        .clk(clk), .btn_input(usr_btn[gi]), .btn_output(debounced_usr_btn[gi])
+    );
+  end
+endgenerate
+
 reg [3:0]usr_btn_one;
 reg [3:0]usr_btn_one_temp;
 integer i, j;
 always @(posedge clk) begin
     if (~reset_n) begin
-        usr_btn_one = 0;
+        usr_btn_one = 4'b0;
+        usr_btn_one_temp = 4'b0;
     end else begin
         //make usr_btn have only one "1" and others are "0"
         for (i = 0; i < 4; i = i + 1) begin
-            usr_btn_one_temp[i] = usr_btn[i];
-            if (usr_btn[i]) begin
+            usr_btn_one_temp[i] = debounced_usr_btn[i];
+            if (debounced_usr_btn[i]) begin
                 for (j = 0; j < 4; j = j + 1) begin
                     if ( i != j) 
                         usr_btn_one_temp[j] = 0;
@@ -64,6 +76,6 @@ always @(posedge clk) begin
     end
 end
 
-assign direction = (|usr_btn_one) ? usr_btn_one : direction_reg;
+assign direction = (~reset_n)? 4'b0 : (|usr_btn_one) ? usr_btn_one : direction_reg;
 
 endmodule
