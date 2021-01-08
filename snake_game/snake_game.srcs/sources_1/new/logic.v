@@ -107,8 +107,38 @@ output reg game_ended
         end
         
         //apple
-        calc_map[CALC_COL*3+1] = APPLE;
+        calc_map[apple_pos] = APPLE;
         //todo
+    end
+
+    reg [7:0]apple_pos;
+    reg [7:0]apple_pos_rand;
+    reg [7:0]apple_pos_temp[CALC_COL*CALC_ROW-1:0];
+    reg [7:0]apple_pos_temp_len;
+
+    wire apple_eaten;
+    wire [7:0]apple_pos_counter;
+    reg [7:0]apple_pos_counter_reg;
+    assign apple_eaten = snake_pos[0] == apple_pos;
+    assign apple_pos_counter = apple_eaten ? apple_pos_counter_reg : 0;
+    always @(posedge clk) begin
+        if (reset_n) 
+            apple_pos = CALC_COL*3+1;
+        else
+        if (apple_eaten) begin
+            if (apple_pos_counter < CALC_COL*CALC_ROW) begin
+                if (calc_map[apple_pos_counter] == TILE_EMPTY) begin
+                    apple_pos_temp[apple_pos_temp_len] = apple_pos_counter;
+                    apple_pos_temp_len = apple_pos_temp_len + 1;
+                end
+                apple_pos_counter_reg = apple_pos_counter_reg + 1;
+            end else begin
+                apple_pos_rand = $urandom%apple_pos_temp_len;
+                apple_pos = apple_pos_temp[apple_pos_rand];
+            end
+        end else begin
+            apple_pos_counter_reg = apple_pos_counter;
+        end
     end
 
     integer si;
@@ -134,6 +164,9 @@ output reg game_ended
             end
         end
         else if (~game_ended) begin
+            if (apple_eaten) begin
+                snake_len = snake_len + 1;
+            end
             if (timer && game_started) begin
                 if (direction[0]) begin //UP
                     collided <= (snake_pos[0] < CALC_COL);
@@ -152,21 +185,18 @@ output reg game_ended
             if (_move && ~timer) begin //seperate collide dectection and move in clk
 
                 if (direction[0]) begin //UP
-                    if (~collided) 
-                        snake_pos_temp[0] = snake_pos[0] - CALC_COL;
+                    snake_pos_temp[0] = snake_pos[0] - CALC_COL;
                 end else 
                 if (direction[1]) begin //RIGHT
-                    if (~collided) 
-                        snake_pos_temp[0] = snake_pos[0] + 1;
+                    snake_pos_temp[0] = snake_pos[0] + 1;
 
                 end else
                 if (direction[2]) begin //DOWN
-                    if (~collided) 
-                        snake_pos_temp[0] = snake_pos[0] + CALC_COL;
+                    snake_pos_temp[0] = snake_pos[0] + CALC_COL;
 
-                end else begin //LEFT, which is also the default direction
-                    if (~collided)
-                        snake_pos_temp[0] = snake_pos[0] - 1;
+                end else 
+                if (direction[3]) begin //LEFT
+                    snake_pos_temp[0] = snake_pos[0] - 1;
                 end
 
                 for (i = 0; i < CALC_COL*CALC_ROW-1; i = i + 1) begin
@@ -194,7 +224,7 @@ output reg game_ended
     reg [7:0]left_snake_body_direction[CALC_ROW*CALC_COL-1:0];
     reg [7:0]right_snake_body_direction[CALC_ROW*CALC_COL-1:0];
     always @(posedge clk) begin
-        if (~reset_n) begin
+        if (~reset_n || ~game_started) begin
             for (ti = 0; ti < CALC_COL*CALC_ROW; ti = ti + 1) begin
                 snake_tile_type[ti] = NULL;
             end
@@ -204,6 +234,7 @@ output reg game_ended
             snake_tile_type[3] = SNAKE_B_V;
             snake_tile_type[4] = SNAKE_T_T;
         end else begin
+            //head
             if      (snake_pos[0] - snake_pos[1] == LEFT) //LEFT
                 snake_tile_type[0] = SNAKE_H_R;
             else if (snake_pos[0] - snake_pos[1] == RIGHT) //RIGHT
@@ -213,6 +244,7 @@ output reg game_ended
             else if (snake_pos[0] - snake_pos[1] == DOWN) //BOTTOM
                 snake_tile_type[0] = SNAKE_H_T;
             
+            //body
             for (ti = 1; ti < CALC_COL*CALC_ROW-1; ti = ti + 1) begin
                 if (ti < snake_len) begin
                     left_snake_body_direction[ti] = snake_pos[ti] - snake_pos[ti-1];
@@ -256,6 +288,8 @@ output reg game_ended
                 end else
                     snake_tile_type[ti] = NULL;
             end
+
+            //tail
             if      (snake_pos[snake_len-1] - snake_pos[snake_len-2] == LEFT) //LEFT
                 snake_tile_type[snake_len-1] = SNAKE_T_R;
             else if (snake_pos[snake_len-1] - snake_pos[snake_len-2] == RIGHT) //RIGHT
