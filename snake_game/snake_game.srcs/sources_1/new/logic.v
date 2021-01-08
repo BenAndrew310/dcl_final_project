@@ -54,12 +54,56 @@ output reg game_ended
     //for calculation
     reg [4:0] calc_map [CALC_COL*CALC_ROW-1:0];
 
+    reg [3:0]STATE;
+    reg [3:0]NEXT_S;
+    localparam  S_IDLE = 0,
+                S_CHECK_COLLIDE = 1,
+                S_MOVE = 2,
+                S_DIR_CALC = 3,
+                S_TILE_CALC = 4,
+                S_EMPTY_TILE_COUNT = 5,
+                S_NEW_APPLE = 6,
+                S_DISPLAY = 7;
+                
+    always @(posedge clk)begin
+        if(~reset_n)
+            STATE <= S_IDLE;
+        else
+            STATE <= NEXT_S;
+    end
+
+    always@(*)begin
+        case(STATE)
+            S_IDLE:
+                if (timer)  NEXT_S = S_CHECK_COLLIDE;
+            S_CHECK_COLLIDE:
+                if (~game_ended) NEXT_S = S_MOVE;
+            S_MOVE:
+                if(moved) NEXT_S = S_DIR_CALC;
+            S_DIR_CALC:
+                if (direction_calculated) NEXT_S = S_TILE_CALC;
+            S_TILE_CALC:
+                if (tile_calculated) 
+                    if (apple_eaten) NEXT_S = S_EMPTY_TILE_COUNT;
+                    else NEXT_S = S_DISPLAY;
+            S_EMPTY_TILE_COUNT:
+                if (empty_tile_counted) NEXT_S = S_NEW_APPLE;
+            S_NEW_APPLE:
+                NEXT_S = S_DISPLAY;
+            S_DISPLAY:
+                if (display_finished) NEXT_S = S_IDLE;
+            default:
+                NEXT_S = S_IDLE;
+        endcase
+    end
+
     //flatten map
     genvar fi;
     generate for (fi=0; fi<COLUMN*ROW; fi=fi+1) begin
       assign flattened_map[5*fi+5-1:5*fi] = map[fi];
     end endgenerate
 
+    //timer
     wire timer;
     reg [27:0] counter;
     localparam TICK_PER_CLK = 40000000;
@@ -68,9 +112,17 @@ output reg game_ended
     end
     assign timer = counter == TICK_PER_CLK;
 
+    //put calc_map in the middle of map
     integer i, j;
-    always @(posedge clk) begin
+    always @(*) begin
+        for (i=0; i < CALC_COL; i = i + 1) begin
+            for (j = 0; j < CALC_ROW; j = j+1) begin
+                map[(i+1)+(j+1)*COLUMN] = calc_map[i+j*CALC_COL];
+            end
+        end
+    end
 
+    initial begin
         //border and corner
         for (i=0; i<COLUMN*ROW; i=i+1) begin
             if (i<COLUMN)
@@ -86,32 +138,25 @@ output reg game_ended
         map[COLUMN-1] <= TILE_TR;
         map[COLUMN*(ROW-1)] <= TILE_BL;
         map[COLUMN*ROW-1] <= TILE_BR;
-
-        //put calc_map in the middle of map
-        for (i=0; i < CALC_COL; i = i + 1) begin
-            for (j = 0; j < CALC_ROW; j = j+1) begin
-                map[(i+1)+(j+1)*COLUMN] = calc_map[i+j*CALC_COL];
-            end
-        end
     end
 
     //calc_map
     always @(posedge clk) begin
-        //snake
-        for (i = 0; i < CALC_COL*CALC_ROW; i = i + 1) begin
-            calc_map[i] = TILE_EMPTY;
-        end
-
-        for (i = 0; i < CALC_COL*CALC_ROW; i = i + 1) begin
-            if (i < snake_len) begin
-                calc_map[snake_pos[i]] = snake_tile_type[i];
+        if (STATE == S_DISPLAY) begin
+            for (i = 0; i < CALC_COL*CALC_ROW; i = i + 1) begin
+                calc_map[i] = TILE_EMPTY;
             end
-        end
-        
-        //apple
-        calc_map[apple_pos] = APPLE;
 
-        //todo
+            //snake
+            for (i = 0; i < CALC_COL*CALC_ROW; i = i + 1) begin
+                if (i < snake_len) begin
+                    calc_map[snake_pos[i]] = snake_tile_type[i];
+                end
+            end
+            
+            //apple
+            calc_map[apple_pos] = APPLE;
+        end
     end
 
 
@@ -127,28 +172,52 @@ output reg game_ended
     wire [7:0]empty_tile_count_counter;
     reg [7:0]empty_tile_count_counter_reg;
     assign empty_tile_count_counter = apple_eaten ? empty_tile_count_counter_reg : 0;
-    assign tile_count_finished = empty_tile_count_counter == apple_rand_pos;
+    assign empty_tile_counted = empty_tile_count_counter == apple_rand_pos;
     always @(posedge clk) begin
         if (~reset_n) begin
             apple_pos = 3*CALC_COL+4;
             snake_len = 5;
         end
-        if (~apple_eaten) begin
+        if (STATE == S_TILE_CALC && NEXT_S = S_EMPTY_TILE_COUNT) begin
             apple_rand_pos = random_number%(CALC_COL*CALC_ROW - snake_len-1);
         end
-        if (apple_eaten && ~tile_count_finished) begin
+        if (STATE == S_EMPTY_TILE_COUNT) begin
             apple_pos_pointer = apple_pos_pointer + 1;
             empty_tile_count_counter_reg = empty_tile_count_counter_reg + (calc_map[empty_tile_count_counter] == TILE_EMPTY);
+            
         end
-        if (tile_count_finished) begin
-            apple_pos = apple_pos_pointer;
-            // snake_len = snake_len + 1;
+    end
+
+    always @(posedge clk) begin
+        if (STATE == S_NEW_APPLE) begin
+            //new apple
+            //snake len
+        end
+    end
+
+    reg collided;
+    always @(posedge clk) begin
+        if (timer && game_started && (~game_ended)) begin
+            if (direction[0]) begin //UP
+                collided <= (snake_pos[0] < CALC_COL);
+            end else 
+            if (direction[1]) begin //RIGHT
+                collided <= ((snake_pos[0] + 1)%CALC_COL == 0);
+            end else
+            if (direction[2]) begin //DOWN
+                collided <= ((snake_pos[0] ) >= CALC_COL*(CALC_ROW-1));
+            end else 
+            if (direction[3]) begin
+                collided <= ((snake_pos[0]%CALC_COL) == 0);
+            end
         end
     end
 
     integer si;
-    reg collided;
-    reg _move;
+    reg [7:0]body_forward_counter;
+    reg had_move;
+    wire moved;
+    assign moved = body_forward_counter == CALC_COL*CALC_ROW-1;
     always @(posedge clk) begin
         if (~reset_n || ~game_started) begin
             collided <= 0;
@@ -160,57 +229,40 @@ output reg game_ended
             for (si = 5; si < CALC_COL*CALC_ROW; si = si +1 ) begin
                 snake_pos[si] = NULL;
             end
-
-            for (si = 0; si < CALC_COL*CALC_ROW; si = si + 1) begin
-                snake_pos_temp[si] = snake_pos[si];
-            end
+            had_move = 0;
         end
         else begin
-            if (timer && game_started && (~game_ended)) begin
-                if (direction[0]) begin //UP
-                    collided <= (snake_pos[0] < CALC_COL);
-                end else 
-                if (direction[1]) begin //RIGHT
-                    collided <= ((snake_pos[0] + 1)%CALC_COL == 0);
-                end else
-                if (direction[2]) begin //DOWN
-                    collided <= ((snake_pos[0] ) >= CALC_COL*(CALC_ROW-1));
-                end else 
-                if (direction[3]) begin
-                    collided <= ((snake_pos[0]%CALC_COL) == 0);
-                end
-                _move = ~collided;
+            if (STATE == S_MOVE) begin //seperate collide dectection and move in clk
+                if (~had_move) begin
+                    if (direction[0]) begin //UP
+                        snake_pos_temp[0] = snake_pos[0] - CALC_COL;
+                    end else 
+                    if (direction[1]) begin //RIGHT
+                        snake_pos_temp[0] = snake_pos[0] + 1;
 
-            end
-            if (_move) begin //seperate collide dectection and move in clk
+                    end else
+                    if (direction[2]) begin //DOWN
+                        snake_pos_temp[0] = snake_pos[0] + CALC_COL;
 
-                if (direction[0]) begin //UP
-                    snake_pos_temp[0] = snake_pos[0] - CALC_COL;
-                end else 
-                if (direction[1]) begin //RIGHT
-                    snake_pos_temp[0] = snake_pos[0] + 1;
-
-                end else
-                if (direction[2]) begin //DOWN
-                    snake_pos_temp[0] = snake_pos[0] + CALC_COL;
-
-                end else 
-                if (direction[3]) begin //LEFT
-                    snake_pos_temp[0] = snake_pos[0] - 1;
-                end
-
-                for (i = 0; i < CALC_COL*CALC_ROW-1; i = i + 1) begin
-                    if(i >= snake_len)
-                        snake_pos[i] = NULL;
-                    else begin
-                        snake_pos_temp[i+1] = snake_pos[i];
+                    end else 
+                    if (direction[3]) begin //LEFT
+                        snake_pos_temp[0] = snake_pos[0] - 1;
                     end
                 end
-                _move = 0;
-            end
-            for (i = 0; i < CALC_COL*CALC_ROW; i = i + 1) begin
-                snake_pos[i] = snake_pos_temp[i];
-            end
+
+                if(body_forward_counter >= snake_len)
+                    snake_pos[body_forward_counter] = NULL;
+                else begin
+                    snake_pos_temp[body_forward_counter+1] = snake_pos[body_forward_counter];
+                end
+                body_forward_counter = body_forward_counter + 1;
+                if (moved) begin
+                    for (i = 0; i < CALC_COL*CALC_ROW; i = i + 1) begin
+                        snake_pos[i] = snake_pos_temp[i];
+                    end
+                end
+            end else
+                body_forward_counter = 0;
         end
     end
 

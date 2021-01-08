@@ -2,23 +2,28 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Fri Jan  8 16:52:58 2021
-# Process ID: 7232
+# Start of session at: Sat Jan  9 06:52:23 2021
+# Process ID: 12928
 # Current directory: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3540 C:\Users\Shlab_43\Desktop\dcl_final_project\snake_game\snake_game.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14132 C:\Users\Shlab_43\Desktop\dcl_final_project\snake_game\snake_game.xpr
 # Log file: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/vivado.log
 # Journal file: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.xpr
-INFO: [Project 1-313] Project file moved from 'C:/Users/Shlab_71/Desktop/dcl_final_project/snake_game' since last save.
 Scanning sources...
 Finished scanning sources
-WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.ip_user_files', nor could it be found using path 'C:/Users/Shlab_71/Desktop/dcl_final_project/snake_game/snake_game.ip_user_files'.
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.ip_user_files'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
 update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 3
+[Sat Jan  9 06:52:44 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
+[Sat Jan  9 06:52:44 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
 open_hw_manager
 connect_hw_server -allow_non_jtag
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
@@ -41,300 +46,31 @@ INFO: [Labtools 27-2221] Launch Output:
 
 
 
-connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1014.090 ; gain = 0.000
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1191.863 ; gain = 0.000
 open_hw_target
 INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319A43751A
 current_hw_device [get_hw_devices xc7a35t_0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
-ERROR: [Labtools 27-2312] Device xc7a35t_0 is no longer available.
-Check cable connectivity and that the target board is powered up then
-use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
-Use open_hw_target to re-register the hardware device.
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 17:10:30 2021] Launched synth_1...
+[Sat Jan  9 07:11:46 2021] Launched synth_1...
 Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Fri Jan  8 17:10:30 2021] Launched impl_1...
+[Sat Jan  9 07:11:46 2021] Launched impl_1...
 Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
 reset_run synth_1
 WARNING: [Vivado 12-1017] Problems encountered:
 1. Failed to delete one or more files in run directory C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1
 
 launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 18:04:08 2021] Launched synth_1...
+[Sat Jan  9 07:13:16 2021] Launched synth_1...
 Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Fri Jan  8 18:04:08 2021] Launched impl_1...
+[Sat Jan  9 07:13:16 2021] Launched impl_1...
 Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 18:48:46 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Fri Jan  8 18:48:46 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 18:49:22 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Fri Jan  8 18:49:22 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-open_run impl_1
-INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 2659.211 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 259 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'snake_game' is not ideal for floorplanning, since the cellview 'logic' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
-INFO: [Project 1-479] Netlist was created with Vivado 2020.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Timing 38-478] Restoring timing data from binary archive.
-INFO: [Timing 38-479] Binary timing data restore complete.
-INFO: [Project 1-856] Restoring constraints from binary archive.
-INFO: [Project 1-853] Binary constraint restore complete.
-Reading XDEF placement.
-Reading placer database...
-Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.532 . Memory (MB): peak = 3085.445 ; gain = 0.000
-Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.532 . Memory (MB): peak = 3085.445 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 3085.445 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 24 instances were transformed.
-  RAM64M => RAM64M (RAMD64E(x4)): 12 instances
-  RAM64X1D => RAM64X1D (RAMD64E(x2)): 12 instances
-
-open_run: Time (s): cpu = 00:00:23 ; elapsed = 00:00:20 . Memory (MB): peak = 3197.984 ; gain = 538.773
-CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-report_utilization -name utilization_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 19:50:47 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Fri Jan  8 19:50:47 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-report_utilization -name utilization_2
-report_utilization -name utilization_3
-report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1L, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 20:11:47 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Fri Jan  8 20:11:47 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-report_utilization -name utilization_4
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 21:54:33 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Fri Jan  8 21:54:33 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 22:15:35 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Fri Jan  8 22:15:35 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 22:16:05 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Fri Jan  8 22:16:05 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-WARNING: [Vivado 12-872] Run step 'Design Initialization' is out-of-date.
-[Fri Jan  8 22:42:09 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-launch_runs synth_1 -jobs 3
-[Fri Jan  8 22:43:38 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1
-
-launch_runs synth_1 -jobs 3
-[Fri Jan  8 22:49:05 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 3
-[Fri Jan  8 23:08:41 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 23:10:56 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210319A43751A
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319A43751A
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210319A43751A
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319A43751A
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
-ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210319A43751A
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319A43751A
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Fri Jan  8 23:30:36 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Fri Jan  8 23:30:36 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210319A43751A
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319A43751A
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
-report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1L, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-report_utilization -name utilization_5
-report_utilization -name utilization_6
-report_utilization -name utilization_1
-close_design
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Sat Jan  9 00:28:36 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Sat Jan  9 00:28:36 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-open_run synth_1 -name synth_1
-Design is defaulting to impl run constrset: constrs_1
-Design is defaulting to synth run part: xc7a35ticsg324-1L
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.607 . Memory (MB): peak = 3693.301 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 957 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'snake_game' is not ideal for floorplanning, since the cellview 'logic' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
-INFO: [Project 1-479] Netlist was created with Vivado 2020.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]
-Finished Parsing XDC File [C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 3693.301 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 28 instances were transformed.
-  RAM64M => RAM64M (RAMD64E(x4)): 14 instances
-  RAM64X1D => RAM64X1D (RAMD64E(x2)): 14 instances
-
-open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 3693.301 ; gain = 0.000
-report_utilization -name utilization_1
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -jobs 3
-[Sat Jan  9 01:16:19 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Sat Jan  9 01:29:01 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-[Sat Jan  9 01:29:01 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-report_utilization -name utilization_2
-close_design
-open_run synth_1 -name synth_1
-Design is defaulting to impl run constrset: constrs_1
-Design is defaulting to synth run part: xc7a35ticsg324-1L
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.628 . Memory (MB): peak = 3948.484 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 860 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'snake_game' is not ideal for floorplanning, since the cellview 'logic' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
-INFO: [Project 1-479] Netlist was created with Vivado 2020.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]
-Finished Parsing XDC File [C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 3948.484 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 24 instances were transformed.
-  RAM64M => RAM64M (RAMD64E(x4)): 12 instances
-  RAM64X1D => RAM64X1D (RAMD64E(x2)): 12 instances
-
-open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 3948.484 ; gain = 0.000
-reset_run synth_1
-launch_runs synth_1 -jobs 3
-[Sat Jan  9 02:36:55 2021] Launched synth_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 3
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Sat Jan  9 02:55:13 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-refresh_design
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 3948.484 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 274 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'snake_game' is not ideal for floorplanning, since the cellview 'logic' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
-INFO: [Project 1-479] Netlist was created with Vivado 2020.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]
-Finished Parsing XDC File [C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/constrs_1/new/snake_game.xdc]
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-[Sat Jan  9 02:57:11 2021] Launched impl_1...
-Run output will be captured here: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.runs/impl_1/snake_game.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
