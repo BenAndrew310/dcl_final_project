@@ -92,6 +92,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/debounce.v
   C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/input.v
   C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/logic.v
+  C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/random.v
   C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/sram.v
   C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/vga_sync.v
   C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.srcs/sources_1/new/view.v
