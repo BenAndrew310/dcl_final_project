@@ -2,12 +2,12 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Fri Jan  8 14:43:13 2021
-# Process ID: 984
-# Current directory: C:/Users/Shlab_71/Desktop/dcl_final_project/snake_game
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3216 C:\Users\Shlab_71\Desktop\dcl_final_project\snake_game\snake_game.xpr
-# Log file: C:/Users/Shlab_71/Desktop/dcl_final_project/snake_game/vivado.log
-# Journal file: C:/Users/Shlab_71/Desktop/dcl_final_project/snake_game\vivado.jou
+# Start of session at: Fri Jan  8 16:52:58 2021
+# Process ID: 7232
+# Current directory: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3540 C:\Users\Shlab_43\Desktop\dcl_final_project\snake_game\snake_game.xpr
+# Log file: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/vivado.log
+# Journal file: C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/Shlab_71/Desktop/dcl_final_project/snake_game/snake_game.xpr
+open_project C:/Users/Shlab_43/Desktop/dcl_final_project/snake_game/snake_game.xpr
